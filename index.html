@@ -1,15 +1,23 @@
-# 1. Instalar la librería necesaria
-!pip install qrcode[pil]
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Test AR mínimo</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    html, body { height:100%; margin:0; }
+    model-viewer { width:100%; height:100%; background:#111; }
+  </style>
+</head>
+<body>
 
-# 2. Importar los módulos
-import qrcode
-from IPython.display import display
-
-# 3. Configurar el enlace y generar el QR
-# Cambia "https://www.google.com" por el enlace que desees
-enlace = "https://angelos95p.github.io/Ar-Models/"
-qr = qrcode.make(enlace)
-
-# 4. Mostrar y guardar el código QR
-display(qr)
-qr.save("mi_codigo_qr.png") # El archivo se guarda en la carpeta de archivos de Colab
+  <model-viewer
+     src="lala.glb"
+     ios-src="lala.usdz"
+    ar
+    ar-modes="webxr scene-viewer quick-look"
+    camera-controls
+    alt="Astronauta en AR">
+  </model-viewer>
+</body>
