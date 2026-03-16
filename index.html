@@ -1,0 +1,15 @@
+# 1. Instalar la librería necesaria
+!pip install qrcode[pil]
+
+# 2. Importar los módulos
+import qrcode
+from IPython.display import display
+
+# 3. Configurar el enlace y generar el QR
+# Cambia "https://www.google.com" por el enlace que desees
+enlace = "https://angelos95p.github.io/Ar-Models/"
+qr = qrcode.make(enlace)
+
+# 4. Mostrar y guardar el código QR
+display(qr)
+qr.save("mi_codigo_qr.png") # El archivo se guarda en la carpeta de archivos de Colab
